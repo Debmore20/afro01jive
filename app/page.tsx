@@ -17,15 +17,15 @@ export default function Home() {
     }
     getArticles();
   }, []);
-  }
+
 
   return(
     <main className="px-12">
       <div className=" container grid grid-cols-12 max-w-6xl mx-auto gap-y-6 md:gap-6">
         {articles.map((article) => (
-          <ArticlePreview key={article.id} params={article} />
+          <ArticlePreview key={article.Articleid} params = {article} />
         ))}
       </div>
     </main>
-  )
+  );
 }
