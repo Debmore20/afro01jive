@@ -11,7 +11,7 @@ export default function ArticlePreview({
         <h2 className="text-2xl text-extratwo font-bold">{params.Title}</h2>
         <p className="line-clamp-3 text-slate-600">{params.Body}</p>
         <p className=" text-extrafour text-sm font-bold">
-          <Link href={"/articles/"+ 1}>
+          <Link href={"/articles/"+ params.Articleid}>
             Read More
           </Link>
         </p>
