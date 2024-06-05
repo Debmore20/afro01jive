@@ -1,9 +1,10 @@
 import Link from "next/link";
+import ArticleData from "../interface/article-data-type";
 
 export default function ArticlePreview({
   params,
 }: {
-  params: { articleId: number; articleTitle: string; articleContent: string };
+  params: ArticleData;
 }) {
   return (
     <div className="md:col-span-6 col-span-12 border border-slate-100 rounded-2xl shadow-md">

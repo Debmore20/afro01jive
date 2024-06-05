@@ -2,9 +2,12 @@
 // import Image from "next/image";
 import { useState, useEffect } from "react";
 import ArticlePreview from "@/components/ui/article_preview";
+import ArticleData from "@/components/interface/article-data-type";
+
+
 
 export default function Home() {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([] as Array<ArticleData>)
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

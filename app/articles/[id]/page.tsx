@@ -1,9 +1,12 @@
 "use client";
+import ArticleData from "@/components/interface/article-data-type";
 // import Image from "next/image";
 import { useState, useEffect } from "react";
 
+
+
 export default function ArticlePage({ params }: { params: { id: number } }) {
-  const [articleData, setArticleData] = useState();
+  const [articleData, setArticleData] = useState({} as ArticleData);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,15 +34,15 @@ export default function ArticlePage({ params }: { params: { id: number } }) {
         <ArticleSectionLoading />
       ) : (
         <section className="container max-w-6xl mx-auto border rounded-lg shadow-md p-6">
-          <h1 className="text-3xl font-bold mb-4">{articleData?.Title}</h1>
+          <h1 className="text-3xl font-bold mb-4">{articleData.Title}</h1>
           <p>
             {`by: ` +
-              `${articleData?.author[0].FirstName}` +
+              `${articleData.author[0].FirstName}` +
               " " +
-              `${articleData?.author[0].LastName}`}
+              `${articleData.author[0].LastName}`}
           </p>
-          <p className="text-slate-600 text-xs mb-4">{articleData?.PostedAt}</p>
-          <p>{articleData?.Body}</p>
+          <p className="text-slate-600 text-xs mb-4">{articleData.PostedAt}</p>
+          <p>{articleData.Body}</p>
         </section>
       )}
     </main>

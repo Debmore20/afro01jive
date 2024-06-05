@@ -1,13 +1,18 @@
+import ArticleData from "@/components/interface/article-data-type";
 import mysqldb from "@/lib/db";
+
+
 
 export async function POST(req: Request, res: Response) {
   try {
     const { articleId } = await req.json();
-    const [rows] = await mysqldb.query(
+    const [rows]= await mysqldb.query(
       "SELECT * FROM articles WHERE Articleid = ?",
       [articleId]
     );
-    const article = rows[0];
+    const data = rows as Array<Object>;
+    const article = data[0] as ArticleData;
+  
     const [author] = await mysqldb.query(
       "SELECT * FROM authors WHERE Authorid = ?",
       [article.Authorid]
