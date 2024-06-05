@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import MobileMenu from "@/components/ui/mobile_menu";
+import SiteHeader from "@/components/ui/site_header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MobileMenu />
+        <div className="sticky top-0 bg-inherit pt-8 mb-12">
+          <MobileMenu />
+          <SiteHeader />
+        </div>
+
         {children}
-        </body>
+      </body>
     </html>
   );
 }

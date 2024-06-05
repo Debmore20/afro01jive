@@ -7,8 +7,8 @@
 }
 
 body {
-  color:rgb(0, 6, 3);
-  background: rgb(248, 255, 251);  
+  color:#000603;
+  background: #e9f4fd;  
 }
 
 @layer utilities {

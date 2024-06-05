@@ -8,7 +8,7 @@ export default function ArticlePreview({
       <div className="p-6">
       <h2 className="text-2xl text-extratwo font-bold">{params.articleTitle}</h2>
       <p className="line-clamp-3 text-slate-600">{params.articleContent}</p>
-      <p className=" text-extrathree text-sm font-bold ">Read More</p>
+      <p className=" text-extrafour text-sm font-bold ">Read More</p>
       </div>
     </div>
   );
